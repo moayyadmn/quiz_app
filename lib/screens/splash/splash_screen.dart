@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import '../../configs/themes/app_colors.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -6,7 +9,13 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.pink[900],
+        alignment: Alignment.center,
+        decoration: BoxDecoration(gradient: mainGradient(context)),
+        child: Image.asset(
+          'assets/images/splash_icon.png',
+          height: 200,
+          width: 200,
+        ),
       ),
     );
   }
