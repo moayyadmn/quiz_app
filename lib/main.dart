@@ -1,4 +1,5 @@
 import 'package:firebase_quiz_app/bindings/initial_binding.dart';
+import 'package:firebase_quiz_app/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'routes/app_routes.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: Get.find<ThemeController>().darkTheme,
       getPages: AppRoutes.routes,
     );
   }

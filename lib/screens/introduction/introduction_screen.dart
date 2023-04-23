@@ -20,7 +20,6 @@ class IntroductionScreen extends StatelessWidget {
               const Icon(
                 Icons.star,
                 size: 65,
-                color: Colors.white,
               ),
               const SizedBox(
                 height: 20,
@@ -28,16 +27,16 @@ class IntroductionScreen extends StatelessWidget {
               const Text(
                 'This is a study app, you can use it as you want, if you understand how this works, you would be able to scale it.',
                 style: TextStyle(fontSize: 25, color: Colors.white),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
-                height: 20,
+                height: 70,
               ),
               IconButton(
                   onPressed: () {},
                   icon: const Icon(
                     Icons.arrow_forward,
                     size: 40,
-                    color: Colors.white,
                   ))
             ],
           ),

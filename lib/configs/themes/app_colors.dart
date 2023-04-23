@@ -1,9 +1,9 @@
 import 'package:firebase_quiz_app/configs/themes/app_dark_theme.dart';
 import 'package:firebase_quiz_app/configs/themes/app_light_theme.dart';
-import 'package:flutter/widgets.dart';
-
+import 'package:flutter/material.dart';
 import 'ui_parameters.dart';
 
+const Color onSurfaceTextColor = Colors.white;
 const LinearGradient mainGradientLight = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
