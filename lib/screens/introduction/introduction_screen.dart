@@ -33,7 +33,9 @@ class IntroductionScreen extends StatelessWidget {
                 height: 70,
               ),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/home');
+                  },
                   icon: const Icon(
                     Icons.arrow_forward,
                     size: 40,
