@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 
 const Color primaryLightColorLight = Color(0xff43c6ac);
 const Color primaryColorLight = Color(0xff191654);
-const Color mainTextColorLight = Colors.white70;
+const Color mainTextColorLight = Colors.black;
+
 class LightTheme with SubThemeData {
- ThemeData buildLightTheme() {
+  ThemeData buildLightTheme() {
     final ThemeData systemLightTheme = ThemeData.light();
     return systemLightTheme.copyWith(
-      iconTheme: getIconTheme(),
-      textTheme: getTextTheme().apply(
-        bodyColor: mainTextColorLight,
-        displayColor: mainTextColorLight,
-      )
-    );
+        primaryColor: primaryColorLight,
+        iconTheme: getIconTheme(),
+        textTheme: getTextTheme().apply(
+          bodyColor: mainTextColorLight,
+          displayColor: mainTextColorLight,
+        ));
   }
 }

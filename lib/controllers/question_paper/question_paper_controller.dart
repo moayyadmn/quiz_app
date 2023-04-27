@@ -1,9 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_quiz_app/firebse_ref/references.dart';
+import 'package:firebase_quiz_app/models/question_paper_model.dart';
 import 'package:firebase_quiz_app/services/firebase_storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class QuestionPaperController extends GetxController {
-  final allPaperImages = <String>[].obs;
+  
+  final allPapers = <QuestionPaperModel>[].obs;
   @override
   void onReady() {
     getAllPaper();
@@ -11,12 +15,18 @@ class QuestionPaperController extends GetxController {
   }
 
   Future<void> getAllPaper() async {
-    List<String> imgName = ['sectionone', 'sectiontwo', 'sectionthree'];
     try {
-      for (var img in imgName) {
-        var imgUrl = await Get.find<FirebaseSotrageService>().getImage(img);
-        allPaperImages.add(imgUrl!);
+      QuerySnapshot<Map<String, dynamic>> data = await questionPaperRF.get();
+      var paperList = data.docs
+          .map((paper) => QuestionPaperModel.fromSnapshot(paper))
+          .toList();
+      allPapers.assignAll(paperList);
+      for (var paper in paperList) {
+        var imgUrl =
+            await Get.find<FirebaseSotrageService>().getImage(paper.title);
+        paper.imageUrl = imgUrl;
       }
+      allPapers.assignAll(paperList);
     } catch (e) {
       debugPrint(e.toString());
     }

@@ -1,25 +1,45 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class QuestionPaperModel {
   String id;
   String title;
   String decription;
+  String? imageUrl;
   int timeSeconds;
   List<Questions>? questions;
+  int questionCount;
 
   QuestionPaperModel(
       {required this.id,
       required this.title,
       required this.decription,
+      this.imageUrl,
       required this.timeSeconds,
+      required this.questionCount,
       this.questions});
-
+//for data coming from our locla fiels
   QuestionPaperModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         title = json['title'],
         decription = json['Decription'],
+        imageUrl = json['image_url'],
         timeSeconds = json['time_seconds'],
+        questionCount = 0,
         questions = (json['questions'] as List)
             .map((dynamic e) => Questions.fromJson(e as Map<String, dynamic>))
             .toList();
+  // for data comin form firestore
+  QuestionPaperModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> json)
+      : id = json.id,
+        title = json['title'],
+        decription = json['Decription'],
+        imageUrl = json['image_url'],
+        timeSeconds = json['time_seconds'],
+        questionCount = json['questions_count'] as int,
+        questions =
+            []; //we dont want to show the questions in our home screen that is why its empty
+
+  String timeInMinit() => "${timeSeconds / 60} mins";
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

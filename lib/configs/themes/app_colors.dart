@@ -15,4 +15,4 @@ const LinearGradient mainGradientDark = LinearGradient(
 
 //colors function
 LinearGradient mainGradient(BuildContext context) =>
-    UiParameters.isDarkMode(context) ? mainGradientDark : mainGradientLight;
+    UiParameters.isDarkMode() ? mainGradientDark : mainGradientLight;

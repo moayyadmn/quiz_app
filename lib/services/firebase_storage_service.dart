@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 
 import '../firebse_ref/references.dart';
 
-
-
 class FirebaseSotrageService extends GetxService {
   Future<String?> getImage(String? imgName) async {
     if (imgName == null) return null;
@@ -15,6 +13,7 @@ class FirebaseSotrageService extends GetxService {
       var imgUrl = await urlRef.getDownloadURL();
       return imgUrl;
     } catch (e) {
+      print('this is ------------$e');
       return null;
     }
   }
