@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 const Color primaryLightColorLight = Color(0xff43c6ac);
 const Color primaryColorLight = Color(0xff191654);
 const Color mainTextColorLight = Colors.black;
+const Color cardColor = Color.fromARGB(255, 254, 254, 255);
 
 class LightTheme with SubThemeData {
   ThemeData buildLightTheme() {
@@ -11,6 +12,7 @@ class LightTheme with SubThemeData {
     return systemLightTheme.copyWith(
         primaryColor: primaryColorLight,
         iconTheme: getIconTheme(),
+        cardColor: cardColor,
         textTheme: getTextTheme().apply(
           bodyColor: mainTextColorLight,
           displayColor: mainTextColorLight,

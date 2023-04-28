@@ -16,3 +16,8 @@ const LinearGradient mainGradientDark = LinearGradient(
 //colors function
 LinearGradient mainGradient(BuildContext context) =>
     UiParameters.isDarkMode() ? mainGradientDark : mainGradientLight;
+
+//
+Color cutomScuffoldColor(BuildContext context) => UiParameters.isDarkMode()
+    ? const Color(0xff2e3c62)
+    : const Color.fromARGB(255, 240, 237, 255);

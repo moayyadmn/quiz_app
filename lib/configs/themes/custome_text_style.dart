@@ -1,3 +1,4 @@
+import 'package:firebase_quiz_app/configs/themes/app_colors.dart';
 import 'package:firebase_quiz_app/configs/themes/ui_parameters.dart';
 import 'package:flutter/material.dart';
 
@@ -8,3 +9,5 @@ TextStyle cardTitles(context) => TextStyle(
         ? Theme.of(context).textTheme.bodyMedium!.color
         : Theme.of(context).primaryColor);
 const detailText = TextStyle(fontSize: 12);
+const headerText = TextStyle(
+    fontSize: 22, fontWeight: FontWeight.w700, color: onSurfaceTextColor);
