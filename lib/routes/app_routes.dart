@@ -1,4 +1,5 @@
 import 'package:firebase_quiz_app/controllers/question_paper/question_paper_controller.dart';
+import 'package:firebase_quiz_app/controllers/zoom_drawer_controller.dart';
 import 'package:firebase_quiz_app/screens/home/home_screen.dart';
 import 'package:firebase_quiz_app/screens/introduction/introduction_screen.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,7 @@ class AppRoutes {
         page: () => const HomeScreen(),
         binding: BindingsBuilder(() {
           Get.put(QuestionPaperController());
+          Get.put(MyZoomController());
         }))
   ];
 }

@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_quiz_app/bindings/initial_binding.dart';
 import 'package:firebase_quiz_app/controllers/theme_controller.dart';
@@ -12,7 +13,10 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   InitialBinding().dependencies();
-  runApp(const MyApp());
+  runApp(DevicePreview(
+    builder: (context) => const MyApp(),
+    enabled: false,
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,6 +25,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: Get.find<ThemeController>().lightTheme,
       getPages: AppRoutes.routes,
     );

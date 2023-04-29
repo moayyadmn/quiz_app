@@ -1,6 +1,7 @@
 import 'package:firebase_quiz_app/configs/themes/app_dark_theme.dart';
 import 'package:firebase_quiz_app/configs/themes/app_light_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'ui_parameters.dart';
 
 const Color onSurfaceTextColor = Colors.white;
@@ -14,8 +15,8 @@ const LinearGradient mainGradientDark = LinearGradient(
     colors: [primaryDarkColorDark, primaryColorDark]);
 
 //colors function
-LinearGradient mainGradient(BuildContext context) =>
-    UiParameters.isDarkMode() ? mainGradientDark : mainGradientLight;
+LinearGradient mainGradient() =>
+    Get.isDarkMode ? mainGradientDark : mainGradientLight;
 
 //
 Color cutomScuffoldColor(BuildContext context) => UiParameters.isDarkMode()
