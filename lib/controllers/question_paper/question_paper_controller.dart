@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_quiz_app/controllers/auth_controller.dart';
 import 'package:firebase_quiz_app/firebse_ref/references.dart';
 import 'package:firebase_quiz_app/models/question_paper_model.dart';
 import 'package:firebase_quiz_app/services/firebase_storage_service.dart';
@@ -6,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class QuestionPaperController extends GetxController {
-  
   final allPapers = <QuestionPaperModel>[].obs;
   @override
   void onReady() {
@@ -29,6 +29,16 @@ class QuestionPaperController extends GetxController {
       allPapers.assignAll(paperList);
     } catch (e) {
       debugPrint(e.toString());
+    }
+  }
+
+  void navigateToQuestions(
+      {required QuestionPaperModel paper, bool tryAgain = false}) {
+    AuthController _authController = Get.find();
+    if (_authController.isLoggedIn()) {
+      if (tryAgain) {}
+    } else {
+      _authController.showLoginAlertDialog();
     }
   }
 }

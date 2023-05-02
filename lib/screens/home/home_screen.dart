@@ -15,6 +15,7 @@ import 'menu_screen.dart';
 
 class HomeScreen extends GetView<MyZoomController> {
   const HomeScreen({super.key});
+  static const String routeName = "/home";
   @override
   Widget build(BuildContext context) {
     Get.put(FirebaseSotrageService());
@@ -29,6 +30,7 @@ class HomeScreen extends GetView<MyZoomController> {
         controller: _.zoomDrawerController,
         menuScreen: const MenuScreen(),
         mainScreen: Container(
+          width: double.infinity,
           decoration: BoxDecoration(gradient: mainGradient()),
           child: SafeArea(
             child: Column(
