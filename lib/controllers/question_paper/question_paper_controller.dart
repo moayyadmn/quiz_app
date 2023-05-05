@@ -6,6 +6,8 @@ import 'package:firebase_quiz_app/services/firebase_storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../screens/question/questions_screen.dart';
+
 class QuestionPaperController extends GetxController {
   final allPapers = <QuestionPaperModel>[].obs;
   @override
@@ -20,7 +22,6 @@ class QuestionPaperController extends GetxController {
       var paperList = data.docs
           .map((paper) => QuestionPaperModel.fromSnapshot(paper))
           .toList();
-      allPapers.assignAll(paperList);
       for (var paper in paperList) {
         var imgUrl =
             await Get.find<FirebaseSotrageService>().getImage(paper.title);
@@ -34,11 +35,15 @@ class QuestionPaperController extends GetxController {
 
   void navigateToQuestions(
       {required QuestionPaperModel paper, bool tryAgain = false}) {
-    AuthController _authController = Get.find();
-    if (_authController.isLoggedIn()) {
-      if (tryAgain) {}
+    AuthController authController = Get.find();
+    if (authController.isLoggedIn()) {
+      if (tryAgain) {
+        Get.back();
+      } else {
+        Get.toNamed(QuestionsScreen.routeName, arguments: paper);
+      }
     } else {
-      _authController.showLoginAlertDialog();
+      authController.showLoginAlertDialog();
     }
   }
 }

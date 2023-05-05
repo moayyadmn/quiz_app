@@ -29,7 +29,7 @@ class QuestionCard extends GetView<QuestionPaperController> {
           color: Theme.of(context).cardColor),
       child: InkWell(
         onTap: () {
-          controller.navigateToQuestions(paper: model);
+          controller.navigateToQuestions(paper: model,tryAgain: false);
         },
         child: Padding(
           padding: const EdgeInsets.all(10),

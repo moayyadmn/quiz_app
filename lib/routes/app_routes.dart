@@ -5,6 +5,7 @@ import 'package:firebase_quiz_app/screens/introduction/introduction_screen.dart'
 import 'package:get/get.dart';
 
 import '../screens/login/login_screen.dart';
+import '../screens/question/questions_screen.dart';
 import '../screens/splash/splash_screen.dart';
 
 class AppRoutes {
@@ -18,6 +19,7 @@ class AppRoutes {
           Get.put(QuestionPaperController());
           Get.put(MyZoomController());
         })),
-    GetPage(name: LoginScreen.routeName, page: () => const LoginScreen())
+    GetPage(name: LoginScreen.routeName, page: () => const LoginScreen()),
+     GetPage(name: QuestionsScreen.routeName, page: () => const QuestionsScreen())
   ];
 }

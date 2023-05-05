@@ -1,4 +1,5 @@
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../firebse_ref/references.dart';
@@ -13,7 +14,7 @@ class FirebaseSotrageService extends GetxService {
       var imgUrl = await urlRef.getDownloadURL();
       return imgUrl;
     } catch (e) {
-      print('this is ------------$e');
+     debugPrint('this is ------------$e');
       return null;
     }
   }
