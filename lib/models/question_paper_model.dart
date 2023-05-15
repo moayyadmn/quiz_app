@@ -56,6 +56,7 @@ class Questions {
   String quesion;
   List<Answers> answers;
   String? correctAnswer;
+  String? selectedAnswer;
 
   Questions(
       {required this.id,
@@ -70,6 +71,11 @@ class Questions {
             (json['answers'] as List).map((e) => Answers.fromJson(e)).toList(),
         correctAnswer = json['correct_answer'];
 
+  Questions.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+      : id = snapshot.id,
+        quesion = snapshot['quesion'],
+        answers = [],
+        correctAnswer = snapshot['correct_answer'];
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
@@ -89,6 +95,9 @@ class Answers {
   Answers.fromJson(Map<String, dynamic> json)
       : identifire = json['identifire'],
         answer = json['Answer'];
+  Answers.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+      : identifire = snapshot['identifire'] as String?,
+        answer = snapshot['Answer'] as String?;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

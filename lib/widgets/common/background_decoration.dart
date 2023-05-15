@@ -16,6 +16,7 @@ class BackgroundDecroation extends StatelessWidget {
             child: CustomPaint(painter: BackgroundPainter()),
           ),
         ),
+        Positioned(child: child)
       ],
     );
   }

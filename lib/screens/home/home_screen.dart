@@ -50,7 +50,8 @@ class HomeScreen extends GetView<MyZoomController> {
                       ),
                       10.0.spaceX,
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 10),
                         child: Row(
                           children: [
                             const Icon(

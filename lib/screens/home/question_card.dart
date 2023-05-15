@@ -25,7 +25,7 @@ class QuestionCard extends GetView<QuestionPaperController> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: UiParameters.carcardBorderRadiusd,
+          borderRadius: UiParameters.cardBorderRadiusd,
           color: Theme.of(context).cardColor),
       child: InkWell(
         onTap: () {

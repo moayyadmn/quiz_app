@@ -7,7 +7,7 @@ double get mobileScreenPadding => _mobileScreenPadding;
 double get cardBorderRadius => _cardBorderRadius;
 
 class UiParameters {
-  static BorderRadius get carcardBorderRadiusd =>
+  static BorderRadius get cardBorderRadiusd =>
       BorderRadius.circular(_cardBorderRadius);
   static EdgeInsets get mobileScreenPaddig =>
       const EdgeInsets.all(_mobileScreenPadding);
