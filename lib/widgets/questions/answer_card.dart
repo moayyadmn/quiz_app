@@ -16,11 +16,11 @@ class AnswerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: UiParameters.cardBorderRadiusd,
+      borderRadius: UiParameters.cardBorderRadius,
       child: Ink(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         decoration: BoxDecoration(
-            borderRadius: UiParameters.cardBorderRadiusd,
+            borderRadius: UiParameters.cardBorderRadius,
             color: isSelected
                 ? answerSelectedColor()
                 : Theme.of(context).cardColor,

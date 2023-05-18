@@ -25,7 +25,7 @@ class QuestionCard extends GetView<QuestionPaperController> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: UiParameters.cardBorderRadiusd,
+          borderRadius: UiParameters.cardBorderRadius,
           color: Theme.of(context).cardColor),
       child: InkWell(
         onTap: () {
@@ -87,7 +87,7 @@ class QuestionCard extends GetView<QuestionPaperController> {
                                   ? Colors.white
                                   : Theme.of(context).primaryColor),
                           text: Text(
-                            model.timeInMinit(),
+                            model.timeInMinuit(),
                             style: detailText.copyWith(
                                 color: Get.isDarkMode
                                     ? Colors.white

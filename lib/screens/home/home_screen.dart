@@ -82,7 +82,7 @@ class HomeScreen extends GetView<MyZoomController> {
                       child: Obx(
                         () => ListView.separated(
                             physics: const ClampingScrollPhysics(),
-                            padding: UiParameters.mobileScreenPaddig,
+                            padding: UiParameters.mobileScreenPadding,
                             itemBuilder: (context, index) {
                               return QuestionCard(
                                 model: questionPaperController.allPapers[index],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BackgroundDecroation extends StatelessWidget {
-  const BackgroundDecroation(
+class BackgroundDecoration extends StatelessWidget {
+  const BackgroundDecoration(
       {super.key, required this.child, this.showGradient = false});
   final Widget child;
   final bool showGradient;
@@ -16,7 +16,7 @@ class BackgroundDecroation extends StatelessWidget {
             child: CustomPaint(painter: BackgroundPainter()),
           ),
         ),
-        Positioned(child: child)
+        Positioned.fill(child: SafeArea(child: child))
       ],
     );
   }

@@ -39,7 +39,7 @@ class QuestionPaperModel {
         questions =
             []; //we dont want to show the questions in our home screen that is why its empty
 
-  String timeInMinit() => "${timeSeconds / 60} mins";
+  String timeInMinuit() => "${timeSeconds / 60} mins";
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

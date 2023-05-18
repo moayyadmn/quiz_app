@@ -7,9 +7,9 @@ double get mobileScreenPadding => _mobileScreenPadding;
 double get cardBorderRadius => _cardBorderRadius;
 
 class UiParameters {
-  static BorderRadius get cardBorderRadiusd =>
+  static BorderRadius get cardBorderRadius =>
       BorderRadius.circular(_cardBorderRadius);
-  static EdgeInsets get mobileScreenPaddig =>
+  static EdgeInsets get mobileScreenPadding =>
       const EdgeInsets.all(_mobileScreenPadding);
   static bool isDarkMode() {
     return Get.isDarkMode ? true : false;
