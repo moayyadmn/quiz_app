@@ -13,7 +13,7 @@ class MyZoomController extends GetxController {
     super.onReady();
   }
 
-  void toogleDrawer() {
+  void toggleDrawer() {
     zoomDrawerController.toggle!.call();
     update();
   }

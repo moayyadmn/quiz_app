@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_quiz_app/firebse_ref/loading_status.dart';
 import 'package:firebase_quiz_app/firebse_ref/references.dart';
@@ -17,6 +16,7 @@ class QuestionsController extends GetxController {
   final Rxn<Questions> currentQuestion = Rxn<Questions>();
 
   //timer
+  Timer? _timer;
   int remainSeconds = 1;
   final time = "00:00".obs;
 
@@ -72,6 +72,22 @@ class QuestionsController extends GetxController {
     update(['answers_list']);
   }
 
+  String get completedTest {
+    final answered = allQuestions
+        .where((element) => element.selectedAnswer != null)
+        .toList()
+        .length;
+    return '$answered out of ${allQuestions.length} answered';
+  }
+
+  void jumpToQuestion(int index, {bool isGoBack = true}) {
+    questionIndex.value = index;
+    currentQuestion.value = allQuestions[index];
+    if (isGoBack) {
+      Get.back();
+    }
+  }
+
   void nextQuestion() {
     if (questionIndex.value >= allQuestions.length - 1) return;
     questionIndex.value++;
@@ -87,7 +103,7 @@ class QuestionsController extends GetxController {
   _startTimer(int seconds) {
     const duration = Duration(seconds: 1);
     remainSeconds = seconds;
-    Timer.periodic(duration, (timer) {
+    _timer = Timer.periodic(duration, (timer) {
       if (remainSeconds == 0) {
         timer.cancel();
       } else {
@@ -98,5 +114,10 @@ class QuestionsController extends GetxController {
         remainSeconds--;
       }
     });
+  }
+
+  completed() {
+    _timer!.cancel();
+       
   }
 }

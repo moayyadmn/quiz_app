@@ -3,6 +3,7 @@ import 'package:firebase_quiz_app/configs/themes/custome_text_style.dart';
 import 'package:firebase_quiz_app/configs/themes/ui_parameters.dart';
 import 'package:firebase_quiz_app/firebse_ref/loading_status.dart';
 import 'package:firebase_quiz_app/screens/home/question_card.dart';
+import 'package:firebase_quiz_app/screens/question/test_overview_screen.dart';
 import 'package:firebase_quiz_app/widgets/common/question_screen_holder.dart';
 import 'package:firebase_quiz_app/widgets/content_area.dart';
 import 'package:firebase_quiz_app/widgets/questions/count_down_timer.dart';
@@ -120,7 +121,9 @@ class QuestionsScreen extends GetView<QuestionsController> {
                               LoadingStatus.completed,
                           child: MaterialButton(
                               onPressed: () {
-                                controller.nextQuestion();
+                                controller.isLastQuestion
+                                    ? Get.toNamed(TestOverViewScreen.routeName)
+                                    : controller.nextQuestion();
                               },
                               child: Text(
                                 controller.isLastQuestion ? 'Complete' : 'Next',

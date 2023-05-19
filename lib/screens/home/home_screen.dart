@@ -18,7 +18,7 @@ class HomeScreen extends GetView<MyZoomController> {
   static const String routeName = "/home";
   @override
   Widget build(BuildContext context) {
-    Get.put(FirebaseSotrageService());
+    Get.put(FirebaseStorageService());
     QuestionPaperController questionPaperController = Get.find();
     return Scaffold(
         body: GetBuilder<MyZoomController>(
@@ -42,7 +42,7 @@ class HomeScreen extends GetView<MyZoomController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       IconButton(
-                        onPressed: controller.toogleDrawer,
+                        onPressed: controller.toggleDrawer,
                         icon: const Icon(
                           Icons.menu,
                           size: 30,

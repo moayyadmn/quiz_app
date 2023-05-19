@@ -25,7 +25,7 @@ class MenuScreen extends GetView<MyZoomController> {
               right: 30,
               child: BackButton(
                 color: Colors.white,
-                onPressed: controller.toogleDrawer,
+                onPressed: controller.toggleDrawer,
               ),
             ),
             Padding(

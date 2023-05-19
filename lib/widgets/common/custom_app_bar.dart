@@ -1,6 +1,9 @@
 import 'package:firebase_quiz_app/configs/themes/custome_text_style.dart';
 import 'package:firebase_quiz_app/configs/themes/ui_parameters.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../screens/question/test_overview_screen.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar(
@@ -44,10 +47,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
               if (showActionIcon)
                 Transform.translate(
-                  offset: const Offset(10, 0),
+                  offset: const Offset(10, -3),
                   child: IconButton(
-                    onPressed: onMenuActionTab,
-                    icon: const Icon(Icons.menu_rounded),
+                    onPressed: onMenuActionTab ??
+                        () => Get.toNamed(TestOverViewScreen.routeName),
+                    icon: const Icon(
+                      Icons.menu_rounded,
+                      size: 30,
+                    ),
                   ),
                 )
             ],

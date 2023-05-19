@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../firebse_ref/references.dart';
 
-class FirebaseSotrageService extends GetxService {
+class FirebaseStorageService extends GetxService {
   Future<String?> getImage(String? imgName) async {
     if (imgName == null) return null;
     try {

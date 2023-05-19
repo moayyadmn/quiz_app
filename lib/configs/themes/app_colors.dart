@@ -5,6 +5,10 @@ import 'package:get/get.dart';
 import 'ui_parameters.dart';
 
 const Color onSurfaceTextColor = Colors.white;
+const Color correctAnswerColor = Color(0xff3ac3cb);
+const Color wrongAnswerColor = Color(0xfff85187);
+const Color notAnswered = Color(0xff2a3c65);
+
 const LinearGradient mainGradientLight = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
@@ -19,7 +23,7 @@ LinearGradient mainGradient() =>
     Get.isDarkMode ? mainGradientDark : mainGradientLight;
 
 //
-Color cutomScuffoldColor(BuildContext context) => UiParameters.isDarkMode()
+Color customScaffoldColor(BuildContext context) => UiParameters.isDarkMode()
     ? const Color(0xff2e3c62)
     : const Color.fromARGB(255, 240, 237, 255);
 Color answerSelectedColor() => UiParameters.isDarkMode()

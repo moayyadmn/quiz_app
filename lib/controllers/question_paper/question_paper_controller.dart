@@ -24,7 +24,7 @@ class QuestionPaperController extends GetxController {
           .toList();
       for (var paper in paperList) {
         var imgUrl =
-            await Get.find<FirebaseSotrageService>().getImage(paper.title);
+            await Get.find<FirebaseStorageService>().getImage(paper.title);
         paper.imageUrl = imgUrl;
       }
       allPapers.assignAll(paperList);
