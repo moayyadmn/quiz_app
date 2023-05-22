@@ -38,7 +38,8 @@ class QuestionPaperController extends GetxController {
     AuthController authController = Get.find();
     if (authController.isLoggedIn()) {
       if (tryAgain) {
-        Get.back();
+        Get.offNamedUntil(
+            QuestionsScreen.routeName, arguments: paper, (route) => false);
       } else {
         Get.toNamed(QuestionsScreen.routeName, arguments: paper);
       }

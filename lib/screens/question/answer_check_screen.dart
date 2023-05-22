@@ -1,0 +1,96 @@
+import 'package:firebase_quiz_app/configs/themes/custome_text_style.dart';
+import 'package:firebase_quiz_app/controllers/question_paper/questions_controller.dart';
+import 'package:firebase_quiz_app/screens/question/result_screen.dart';
+import 'package:firebase_quiz_app/widgets/common/background_decoration.dart';
+import 'package:firebase_quiz_app/widgets/common/custom_app_bar.dart';
+import 'package:firebase_quiz_app/widgets/content_area.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../widgets/questions/answer_card.dart';
+
+class AnswerCheckScreen extends GetView<QuestionsController> {
+  const AnswerCheckScreen({super.key});
+  static const routeName = '/answerCheckScreen';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: CustomAppBar(
+        titleWidget: Obx(() => Text(
+              'Q. ${(controller.questionIndex.value + 1).toString().padLeft(2, '0')}',
+              style: appBarTS,
+            )),
+        showActionIcon: true,
+        onMenuActionTab: () {
+          Get.toNamed(ResultScreen.routeName);
+        },
+      ),
+      body: BackgroundDecoration(
+          child: Obx(() => Column(
+                children: [
+                  Expanded(
+                      child: ContentArea(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsetsDirectional.only(top: 20),
+                      child: Column(children: [
+                        Text(controller.currentQuestion.value!.quesion),
+                        GetBuilder<QuestionsController>(
+                            id: 'answer_review_list',
+                            builder: (_) {
+                              return ListView.separated( 
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemBuilder: (_, index) {
+                                    final answer = controller
+                                        .currentQuestion.value!.answers[index];
+                                    final selectedAnswer = controller
+                                        .currentQuestion.value!.selectedAnswer;
+                                    final correctAnswer = controller
+                                        .currentQuestion.value!.correctAnswer;
+                                    final String answerText =
+                                        '${answer.identifire}. ${answer.answer}';
+                                    if (correctAnswer == selectedAnswer &&
+                                        answer.identifire == selectedAnswer) {
+                                      return CorrectAnswer(
+                                        answer: answerText,
+                                      );
+                                    } else if (selectedAnswer == null) {
+                                      return NotAnswered(
+                                        answer: answerText,
+                                      );
+                                    } else if (correctAnswer !=
+                                            selectedAnswer &&
+                                        answer.identifire == selectedAnswer) {
+                                      return WrongAnswer(
+                                        answer: answerText,
+                                      );
+                                    } else if (correctAnswer ==
+                                        answer.identifire) {
+                                      return CorrectAnswer(
+                                        answer: answerText,
+                                      );
+                                    }
+
+                                    return AnswerCard(
+                                      answer: answerText,
+                                      onTap: () {},
+                                      isSelected: false,
+                                    );
+                                  },
+                                  separatorBuilder: (_, index) {
+                                    return const SizedBox(
+                                      height: 10,
+                                    );
+                                  },
+                                  itemCount: controller
+                                      .currentQuestion.value!.answers.length);
+                            }),
+                      ]),
+                    ),
+                  ))
+                ],
+              ))),
+    );
+  }
+}

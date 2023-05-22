@@ -1,6 +1,8 @@
 import 'package:firebase_quiz_app/controllers/question_paper/question_paper_controller.dart';
 import 'package:firebase_quiz_app/controllers/question_paper/questions_controller.dart';
 import 'package:firebase_quiz_app/controllers/zoom_drawer_controller.dart';
+import 'package:firebase_quiz_app/screens/question/result_screen.dart';
+import '../screens/question/answer_check_screen.dart';
 import '/screens/home/home_screen.dart';
 import '../screens/introduction/introduction_screen.dart';
 import 'package:get/get.dart';
@@ -31,6 +33,10 @@ class AppRoutes {
         )),
     GetPage(
         name: TestOverViewScreen.routeName,
-        page: () => const TestOverViewScreen())
+        page: () => const TestOverViewScreen()),
+    GetPage(name: ResultScreen.routeName, page: () => const ResultScreen()),
+    GetPage(
+        name: AnswerCheckScreen.routeName,
+        page: () => const AnswerCheckScreen()),
   ];
 }

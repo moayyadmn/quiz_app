@@ -72,8 +72,10 @@ class TestOverViewScreen extends GetView<QuestionsController> {
                   child: Padding(
                     padding: UiParameters.mobileScreenPadding,
                     child: MaterialButton(
-                        minWidth: double.infinity ,
-                        onPressed: () {},
+                        minWidth: double.infinity,
+                        onPressed: () {
+                          controller.completed();
+                        },
                         child: Text(
                           'Complete',
                           style: TextStyle(
