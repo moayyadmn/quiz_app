@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_quiz_app/firebse_ref/loading_status.dart';
 import 'package:firebase_quiz_app/firebse_ref/references.dart';
@@ -22,7 +21,7 @@ class DataUploader extends GetxController {
     final String manifestContent = await DefaultAssetBundle.of(Get.context!)
         .loadString("AssetManifest.json");
     final Map<String, dynamic> manifestMap = json.decode(manifestContent);
-    // in general here keys refres to the path so we need to to tell where the only path we need from our assets
+    // in general here keys refers to the path so we need to to tell where the only path we need from our assets
     // we convert is toList() to make it indexable
     // load json file and print path
     final List<String> papersInAssets = manifestMap.keys
@@ -39,7 +38,7 @@ class DataUploader extends GetxController {
     for (var paper in questionPaperList) {
       batch.set(questionPaperRF.doc(paper.id), {
         "title": paper.title,
-        "Decription": paper.decription,
+        "Description": paper.description,
         "time_seconds": paper.timeSeconds,
         "questions_count":
             paper.questions == null ? 0 : paper.questions!.length,
@@ -48,12 +47,12 @@ class DataUploader extends GetxController {
         final questionPath =
             questionRF(paperId: paper.id, questionId: question.id);
         batch.set(questionPath, {
-          "quesion": question.quesion,
+          "question": question.question,
           "correct_answer": question.correctAnswer,
         });
         for (var answer in question.answers) {
-          batch.set(questionPath.collection("answers").doc(answer.identifire),
-              {"identifire": answer.identifire, "Answer": answer.answer});
+          batch.set(questionPath.collection("answers").doc(answer.identifier),
+              {"identifier": answer.identifier, "Answer": answer.answer});
         }
       }
     }

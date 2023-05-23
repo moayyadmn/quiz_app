@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_quiz_app/controllers/auth_controller.dart';
 import 'package:firebase_quiz_app/controllers/question_paper/question_paper_controller.dart';
 import 'package:firebase_quiz_app/firebse_ref/loading_status.dart';
 import 'package:firebase_quiz_app/firebse_ref/references.dart';

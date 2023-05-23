@@ -14,7 +14,7 @@ class DataUploaderScreen extends StatelessWidget {
           child: Obx(() => Text(
               controller.loadingStatus.value == LoadingStatus.completed
                   ? 'Uploading completed 😍😍'
-                  : 'Uploadig...'))),
+                  : 'Uploading...'))),
     );
   }
 }

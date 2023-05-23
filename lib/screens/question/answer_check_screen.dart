@@ -34,7 +34,7 @@ class AnswerCheckScreen extends GetView<QuestionsController> {
                     child: SingleChildScrollView(
                       padding: const EdgeInsetsDirectional.only(top: 20),
                       child: Column(children: [
-                        Text(controller.currentQuestion.value!.quesion),
+                        Text(controller.currentQuestion.value!.question),
                         GetBuilder<QuestionsController>(
                             id: 'answer_review_list',
                             builder: (_) {
@@ -49,9 +49,9 @@ class AnswerCheckScreen extends GetView<QuestionsController> {
                                     final correctAnswer = controller
                                         .currentQuestion.value!.correctAnswer;
                                     final String answerText =
-                                        '${answer.identifire}. ${answer.answer}';
+                                        '${answer.identifier}. ${answer.answer}';
                                     if (correctAnswer == selectedAnswer &&
-                                        answer.identifire == selectedAnswer) {
+                                        answer.identifier == selectedAnswer) {
                                       return CorrectAnswer(
                                         answer: answerText,
                                       );
@@ -61,12 +61,12 @@ class AnswerCheckScreen extends GetView<QuestionsController> {
                                       );
                                     } else if (correctAnswer !=
                                             selectedAnswer &&
-                                        answer.identifire == selectedAnswer) {
+                                        answer.identifier == selectedAnswer) {
                                       return WrongAnswer(
                                         answer: answerText,
                                       );
                                     } else if (correctAnswer ==
-                                        answer.identifire) {
+                                        answer.identifier) {
                                       return CorrectAnswer(
                                         answer: answerText,
                                       );

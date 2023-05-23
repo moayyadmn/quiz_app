@@ -55,7 +55,7 @@ class QuestionsScreen extends GetView<QuestionsController> {
                           padding: const EdgeInsets.only(top: 25),
                           child: Column(children: [
                             Text(
-                              controller.currentQuestion.value!.quesion,
+                              controller.currentQuestion.value!.question,
                               style: questionTS,
                             ),
                             GetBuilder<QuestionsController>(
@@ -70,12 +70,12 @@ class QuestionsScreen extends GetView<QuestionsController> {
                                         .currentQuestion.value!.answers[index];
                                     return AnswerCard(
                                       answer:
-                                          "${answer.identifire} . ${answer.answer}",
+                                          "${answer.identifier} . ${answer.answer}",
                                       onTap: () {
                                         controller
-                                            .selectedAnswer(answer.identifire);
+                                            .selectedAnswer(answer.identifier);
                                       },
-                                      isSelected: answer.identifire ==
+                                      isSelected: answer.identifier ==
                                           controller.currentQuestion.value!
                                               .selectedAnswer,
                                     );

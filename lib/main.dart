@@ -1,9 +1,9 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_quiz_app/bindings/initial_binding.dart';
-import 'package:firebase_quiz_app/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'controllers/theme_controller.dart';
 import 'firebase_options.dart';
 import 'routes/app_routes.dart';
 
@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
 }
 
 // this widget is for upload data to backend
-/*
-class MyApp extends StatelessWidget {
+
+/* class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -45,4 +45,4 @@ class MyApp extends StatelessWidget {
       home: DataUploaderScreen(),
     );
   }
-}*/
+} */

@@ -1,27 +1,27 @@
 {
     "id": "ppr002",
     "title": "Section Two",
-    "Decription": "Many simple quesions from diffrent subject",
+    "Description": "Many simple questions from different subject",
     "time_seconds": 900,
     "questions": [
         {
             "id": "ppr002q001",
-            "quesion": "A flashing red traffic light signifies that a driver should do what?",
+            "question": "A flashing red traffic light signifies that a driver should do what?",
             "answers": [
                 {
-                    "identifire": "A",
+                    "identifier": "A",
                     "Answer": "stop"
                 },
                 {
-                    "identifire": "B",
+                    "identifier": "B",
                     "Answer": "speed up"
                 },
                 {
-                    "identifire": "C",
+                    "identifier": "C",
                     "Answer": "speed up"
                 },
                 {
-                    "identifire": "D",
+                    "identifier": "D",
                     "Answer": "speed up"
                 }
             ],
@@ -29,22 +29,22 @@
         },
         {
             "id": "ppr002q002",
-            "quesion": "A knish is traditionally stuffed with what filling?",
+            "question": "A knish is traditionally stuffed with what filling?",
             "answers": [
                 {
-                    "identifire": "A",
+                    "identifier": "A",
                     "Answer": "potato"
                 },
                 {
-                    "identifire": "B",
+                    "identifier": "B",
                     "Answer": "creamed corn"
                 },
                 {
-                    "identifire": "C",
+                    "identifier": "C",
                     "Answer": "lemon custard"
                 },
                 {
-                    "identifire": "D",
+                    "identifier": "D",
                     "Answer": "raspberry jelly"
                 }
             ],
@@ -52,22 +52,22 @@
         },
         {
             "id": "ppr002q003",
-            "quesion": "A pita is a type of what?",
+            "question": "A pita is a type of what?",
             "answers": [
                 {
-                    "identifire": "A",
+                    "identifier": "A",
                     "Answer": "fresh fruit"
                 },
                 {
-                    "identifire": "B",
+                    "identifier": "B",
                     "Answer": "flat bread"
                 },
                 {
-                    "identifire": "C",
+                    "identifier": "C",
                     "Answer": "French tart"
                 },
                 {
-                    "identifire": "D",
+                    "identifier": "D",
                     "Answer": "friend bean dip"
                 }
             ],
@@ -75,22 +75,22 @@
         },
         {
             "id": "ppr002q004",
-            "quesion": "A portrait that comically exaggerates a person's physical traits is called a what?",
+            "question": "A portrait that comically exaggerates a person's physical traits is called a what?",
             "answers": [
                 {
-                    "identifire": "A",
+                    "identifier": "A",
                     "Answer": "landscape"
                 },
                 {
-                    "identifire": "B",
+                    "identifier": "B",
                     "Answer": "caricature"
                 },
                 {
-                    "identifire": "C",
+                    "identifier": "C",
                     "Answer": "still life"
                 },
                 {
-                    "identifire": "D",
+                    "identifier": "D",
                     "Answer": "Impressionism"
                 }
             ],
@@ -98,22 +98,22 @@
         },
         {
             "id": "ppr002q005",
-            "quesion": "A student who earns a J.D. can begin his or her career as a what?",
+            "question": "A student who earns a J.D. can begin his or her career as a what?",
             "answers": [
                 {
-                    "identifire": "A",
+                    "identifier": "A",
                     "Answer": "lawyer"
                 },
                 {
-                    "identifire": "B",
+                    "identifier": "B",
                     "Answer": "bricklayer"
                 },
                 {
-                    "identifire": "C",
+                    "identifier": "C",
                     "Answer": "doctor"
                 },
                 {
-                    "identifire": "D",
+                    "identifier": "D",
                     "Answer": "accountant"
                 }
             ],
